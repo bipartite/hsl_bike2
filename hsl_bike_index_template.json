@@ -1,0 +1,46 @@
+{
+    "index_patterns": ["hsl_bike_*"],
+    "settings": {
+        "number_of_shards": 1
+    },
+    "mappings" : {
+        "properties" : {
+            "empty_slots" : {
+                "type" : "integer"
+            },
+            "free_bikes" : {
+                "type" : "integer"
+            },
+            "id" : {
+                "type" : "text",
+                "fields" : {
+                    "keyword" : {
+                        "type" : "keyword",
+                        "ignore_above" : 256
+                    }
+                }
+            },
+            "location": {
+                "type": "geo_point"
+            },
+            "latitude" : {
+                "type" : "half_float"
+            },
+            "longitude" : {
+                "type" : "half_float"
+            },
+            "name" : {
+                "type" : "text",
+                "fields" : {
+                    "keyword" : {
+                        "type" : "keyword",
+                        "ignore_above" : 256
+                    }
+                }
+            },
+            "timestamp" : {
+                "type" : "date"
+            }
+        }
+    }
+}
